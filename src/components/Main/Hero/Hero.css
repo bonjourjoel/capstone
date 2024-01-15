@@ -1,0 +1,9 @@
+.hero-container {
+  background-color: var(--color-primary1);
+}
+
+.hero-image {
+  width: 30vw;
+  height: 30vw;
+  border-radius: 10%;
+}

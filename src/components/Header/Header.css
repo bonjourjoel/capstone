@@ -1,0 +1,17 @@
+
+nav {
+  margin-top: 0.5em;
+  margin-bottom: 1em;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  column-gap: 1em;
+}
+
+.nav-logo {
+  flex-grow: 1;
+  justify-self: start;
+}

@@ -1,0 +1,48 @@
+- design figma with styles
+	2h
+- design html css
+	5h
+- responsive menu
+	3h
+	example: https://pro.chakra-ui.com/components/marketing/navbars
+- responsive body
+	3h
+- pages
+	3h
+- pages animations down
+	5h
+- server api mockup
+	12h
+- booking form
+	5h
+
+
+* css grid container with area content: https://www.coursera.org/learn/html-and-css-in-depth/ungradedLab/PP8OK/create-a-grid-layout
+	if media min width 800px
+		areas with 2fr 8fr 2fr and write in center
+	if less
+		area 100% center
+
+* css grid section special:
+	3 cols if > 800px
+	1 col if less
+
+* css grid comments: 4cols/2cols
+
+* how to do css grid footer:
+	4cols/2cols
+
+* how to do responsive menu?
+	>800:
+		hide icon menu
+		position menu items horizontally in flex
+	less:
+		show icon menu on the right of nav flex
+		position menu items vertically and hide them
+		add js + css transition to show / hide menu items, with X
+
+* how to show hero image
+		position:absolute + overflow
+		text is above
+	both can be programmed in the same unresponsive css (i think...)
+
