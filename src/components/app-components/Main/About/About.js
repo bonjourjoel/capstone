@@ -4,7 +4,11 @@ import "./About.css";
 export default function About() {
   return (
     <ResponsiveGrid>
+<<<<<<< HEAD
       <div id='about'>
+=======
+      <div>
+>>>>>>> 2d4f0a0f353128421493dcc108cb0cf86d2a7fb3
         <h1 className="font-subtitle font-color-highlight2">About</h1>
         <p className="font-description">This section is the same kind of layout than "Hero" so i needn't loose time with it...</p>
         <br />

@@ -13,9 +13,15 @@ export default function Footer() {
           <img src={pic} className="footer-pic" alt='Little lemon food'/>
         </div>
         <div>
+<<<<<<< HEAD
             <div><a href='#home'>Home</a></div>
             <div><a href='#about'>About</a></div>
             <div><a href='menu'>Menu</a></div>
+=======
+            <div><a href='/'>Home</a></div>
+            <div><a href='about'>About</a></div>
+            <div><a href='Menu'>menu</a></div>
+>>>>>>> 2d4f0a0f353128421493dcc108cb0cf86d2a7fb3
             <div><a href='reservations'>Reservations</a></div>
             <div><a href='order-online'>Order Online</a></div>
             <div><a href='login'>Login</a></div>
