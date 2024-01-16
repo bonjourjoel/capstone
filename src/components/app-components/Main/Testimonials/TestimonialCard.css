@@ -1,0 +1,23 @@
+.rating {
+  padding: 10px;
+  background-color: bisque;
+  width: 200px;
+}
+
+.rating-user {
+  display: flex;
+  align-items: center;
+  column-gap: 0.5em;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  font-weight: bold;
+}
+
+.rating-photo {
+  width: 3em;
+  height: 3em;
+}
+
+.rating-review {
+  font-style: italic;
+}

@@ -1,0 +1,8 @@
+.testimonials-container {
+  display: flex;
+  flex-direction: row;
+  column-gap: 1em;
+  row-gap: 1em;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}

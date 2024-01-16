@@ -1,7 +1,7 @@
 import "./DishCard.css";
 import bike from "../../../assets/bike.png";
 
-export default function DishCard({ photo, name, description, price}) {
+export default function DishCard({ id, photo, name, description, price}) {
   return (
     <article className="dish-card">
       <img src={photo} alt={name} />

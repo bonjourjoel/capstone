@@ -7,12 +7,14 @@ import SpecialsHeader from "./SpecialsHeader";
 export default function Specials() {
   return (
     <ResponsiveGrid>
-      <SpecialsHeader />
-      <div className="special-dishes-container">
-        {
-          DISHES.map(dish => <DishCard key={dish.name} {...dish} />)
-        }
-      </div>
+      <section>
+        <SpecialsHeader />
+        <div className="special-dishes-container">
+          {
+            DISHES.map(dish => <DishCard key={dish.id} {...dish} />)
+          }
+        </div>
+      </section>
     </ResponsiveGrid>
   )
 }
