@@ -1,0 +1,17 @@
+
+nav {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  column-gap: 1em;
+}
+
+.nav-logo {
+  justify-self: start;
+}
+
+.nav-flex-whitespace {
+  flex-grow: 1;
+}

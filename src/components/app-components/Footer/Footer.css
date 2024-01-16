@@ -1,0 +1,16 @@
+.footer-pic {
+  height: 10em;
+}
+
+footer {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 1em;
+  row-gap: 1em;
+}
+
+@media (max-width: 650px) {
+  footer {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
