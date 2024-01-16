@@ -4,13 +4,13 @@ import { useNavigate } from "react-router-dom";
 
 export default function BookingForm({bookedTimes, dispatchBook}) {
   const availableOccasions = ['Birthday', 'Anniversary'];
-  const curResDate = new Date().toISOString().substring(0, 10);
+  const initResDate = new Date().toISOString().substring(0, 10);
   function availableTimes(resDate) {
     return [17, 18, 19, 20, 21, 22].filter(time => !bookedTimes?.get(resDate)?.includes(time));
   }
   const [formState, setFormState] = useState({
-    resDate: curResDate,
-    resTime: availableTimes(curResDate)[0],
+    resDate: initResDate,
+    resTime: availableTimes(initResDate)[0],
     guestsCount: 1,
     occasion: availableOccasions[0],
   });
@@ -30,8 +30,7 @@ export default function BookingForm({bookedTimes, dispatchBook}) {
       resDate: formState.resDate,
       resTime: Number(formState.resTime),
     });
-    alert(`booking ok`);
-    navigate('/');
+    navigate('/booking-confirmation');
   }
 
   return (
@@ -53,7 +52,7 @@ export default function BookingForm({bookedTimes, dispatchBook}) {
           <option>Birthday</option>
           <option>Anniversary</option>
       </select>
-      <input type="submit" value="Make Your reservation" />
+      <input type="submit" value="Make Your reservation" disabled={availableTimes(formState.resDate).length === 0}/>
       {/* <pre>formState={JSON.stringify(formState)}</pre>
       <pre>bookedTimes={JSON.stringify(bookedTimes)}</pre>
       <pre>availableTimes={JSON.stringify(availableTimes)}</pre> */}

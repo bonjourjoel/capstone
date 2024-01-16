@@ -2,10 +2,10 @@ import { Route, Routes } from "react-router-dom";
 import HomePage from "./HomePage/HomePage";
 import BookingPage from "./BookingPage/BookingPage";
 import { useReducer } from "react";
+import ConfirmedBooking from "./ConfirmedBooking/ConfirmedBooking";
 
 export default function Main() {
   function reducer(oldBookedMap, action) {
-    console.log(action);
     switch (action.type) {
       case 'book':
         const newBookedMap = new Map(oldBookedMap);
@@ -17,7 +17,6 @@ export default function Main() {
           newBookedTimes = [...oldBookedTimes, action.resTime];
         }
         newBookedMap.set(action.resDate, newBookedTimes);
-        console.log(newBookedMap);
         return newBookedMap;
       default:
         throw new Error(action.type);
@@ -30,6 +29,7 @@ export default function Main() {
       <Routes> 
         <Route path="/" element={<HomePage />}></Route>
         <Route path="/booking" element={<BookingPage bookedTimes={bookedTimes} dispatchBook={dispatchBook} />}></Route>
+        <Route path="/booking-confirmation" element={<ConfirmedBooking />}></Route>
       </Routes>
     </main>
   )
