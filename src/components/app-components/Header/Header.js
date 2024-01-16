@@ -9,7 +9,7 @@ export default function Header() {
       <ResponsiveGrid>
         <ResponsiveMenu
             homeLogo={logo}
-            homeUrl="/"
+            homeUrl="#home"
             homeAlt="Little lemon logo"
             menuItems={[
               { description: 'Home', url: '#home' },
