@@ -1,0 +1,23 @@
+.hero-container {
+  background-color: var(--color-primary1);
+  position: relative;
+}
+
+.hero-main-div {
+  z-index: 1;
+  position: inherit;
+}
+
+.hero-paragraph {
+  width: 200px;
+}
+
+.hero-image {
+  position: absolute;
+  z-index: 0;
+  opacity: .8;
+  top: 20px;
+  right: 10px;
+  height: 105%;
+  border-radius: 10%;
+}
