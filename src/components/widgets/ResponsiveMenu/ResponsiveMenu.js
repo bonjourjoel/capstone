@@ -21,13 +21,20 @@ export default function ResponsiveMenu({
     }
   };
   
+  function handleClick(url) {
+    if (url.startsWith('#')) {
+      scrollTo(url)();
+    }
+    setMenuIsOpened(false);
+  }
+
   function genUl(className) {
     return (
       <ul className={className + " " + (menuIsOpened ? 'visible' : '')}>
         {
           menuItems.map(({description, url}) => (
             <li key={url}>
-              <a href={url} onClick={url.startsWith('#') ? scrollTo(url) : undefined}>
+              <a href={url} onClick={() => handleClick(url)}>
                 {description}
               </a>
             </li>
