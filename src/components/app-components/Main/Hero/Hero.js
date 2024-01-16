@@ -1,5 +1,5 @@
 import "./Hero.css";
-import restaurantFood from "../../../../assets/restauranfood.jpg";
+import restaurantFood from "../../../../assets/restaurant-food.jpg";
 import ResponsiveGrid from "../../../widgets/ResponsiveGrid/ResponsiveGrid";
 import Button from "../../../widgets/Button/Button";
 import { useNavigate } from "react-router-dom";

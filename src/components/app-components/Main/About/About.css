@@ -1,0 +1,41 @@
+.about-container {
+  position: relative;
+}
+
+.about-main-div {
+  z-index: 1;
+  position: inherit;
+}
+
+.about-paragraph {
+  width: 200px;
+}
+
+.about-image {
+  position: absolute;
+  z-index: 0;
+  height: 250px;
+  width: 150px;
+  border-radius: 10%;
+  object-fit: cover;
+}
+
+.about-image-1 {
+  top: 2px;
+  right: 0px;
+}
+
+.about-image-2 {
+  top: 70px;
+  right: 140px;
+}
+
+
+@media (min-width: 700px) {
+  .about-image {
+    width: 250px;
+  }
+  .about-image-2 {
+    right: 200px;
+  }
+}
