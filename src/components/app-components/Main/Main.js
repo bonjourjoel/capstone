@@ -1,8 +1,9 @@
 import { Route, Routes } from "react-router-dom";
 import HomePage from "./HomePage/HomePage";
 import BookingPage from "./BookingPage/BookingPage";
-import { useReducer } from "react";
+import { useEffect, useReducer } from "react";
 import ConfirmedBooking from "./ConfirmedBooking/ConfirmedBooking";
+import { MapSerializer } from "../../../utils/MapSerializer";
 
 export default function Main() {
   function reducer(oldBookedMap, action) {
@@ -17,12 +18,29 @@ export default function Main() {
           newBookedTimes = [...oldBookedTimes, action.resTime];
         }
         newBookedMap.set(action.resDate, newBookedTimes);
+        localStorage.setItem('bookedTimes', MapSerializer.map2string(newBookedMap))
         return newBookedMap;
       default:
         throw new Error(action.type);
     }
   }
   const [bookedTimes, dispatchBook] = useReducer(reducer, new Map()); // date -> booked times ; only for dates with >=1 time booked
+
+  useEffect(() => {
+    const strBookedTimes = localStorage.getItem('bookedTimes');
+    if (strBookedTimes != null && strBookedTimes.length > 0) {
+      const bookedMap = MapSerializer.string2map(strBookedTimes);
+      for (const [resDate, bookedTimes] of bookedMap) {
+        for (const bookedTime of bookedTimes) {
+          dispatchBook({
+            type: 'book',
+            resDate: resDate,
+            resTime: bookedTime,
+          });
+        }
+      }
+    }
+  }, []);
 
   return (
     <main>
