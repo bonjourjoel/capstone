@@ -36,9 +36,9 @@ export default function ResponsiveMenu({
 
   return (
     <nav className="nav">
-      <a href={homeUrl} className="nav-logo">
+      <HashLink smooth to={homeUrl} className="nav-logo">
         <img src={homeLogo} alt={homeAlt}/>
-      </a>
+      </HashLink>
       <div className="nav-flex-whitespace" />
       <a href='#menu' className="nav-menu-button" onClick={handleMenuButtonClick}>
         <img src={menuIsOpened ? close : menu} alt='Menu'/>
