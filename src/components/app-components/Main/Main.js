@@ -5,6 +5,7 @@ import { useReducer } from "react";
 
 export default function Main() {
   function reducer(oldBookedMap, action) {
+    console.log(action);
     switch (action.type) {
       case 'book':
         const newBookedMap = new Map(oldBookedMap);
@@ -16,6 +17,7 @@ export default function Main() {
           newBookedTimes = [...oldBookedTimes, action.resTime];
         }
         newBookedMap.set(action.resDate, newBookedTimes);
+        console.log(newBookedMap);
         return newBookedMap;
       default:
         throw new Error(action.type);
