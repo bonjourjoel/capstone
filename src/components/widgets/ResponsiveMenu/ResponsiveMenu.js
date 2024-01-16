@@ -2,29 +2,15 @@ import "./ResponsiveMenu.css";
 import menu from "../../../assets/icon-hamburger-menu.svg";
 import close from "../../../assets/icon-close.svg";
 import { useState } from "react";
+import { HashLink } from "react-router-hash-link";
 
 export default function ResponsiveMenu({
   homeLogo, homeUrl, homeAlt,
   menuItems /* .description:string, .url:string */,
 }) {
   const [ menuIsOpened, setMenuIsOpened ] = useState(false);
-
-  const scrollTo = (anchorId) => () => {
-    const element = document.getElementById(anchorId);
-    if (element) {
-      setImmediate(() => {
-        element.scrollIntoView({
-          behavior: "smooth",
-          block: "start",
-        });
-      });
-    }
-  };
   
   function handleClick(url) {
-    if (url.startsWith('#')) {
-      scrollTo(url)();
-    }
     setMenuIsOpened(false);
   }
 
@@ -34,9 +20,9 @@ export default function ResponsiveMenu({
         {
           menuItems.map(({description, url}) => (
             <li key={url}>
-              <a href={url} onClick={() => handleClick(url)}>
+              <HashLink smooth to={url} onClick={() => handleClick(url)}>
                 {description}
-              </a>
+              </HashLink>
             </li>
           ))
         }

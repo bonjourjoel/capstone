@@ -9,15 +9,15 @@ export default function Header() {
       <ResponsiveGrid>
         <ResponsiveMenu
             homeLogo={logo}
-            homeUrl="#home"
+            homeUrl="/#home"
             homeAlt="Little lemon logo"
             menuItems={[
-              { description: 'Home', url: '#home' },
-              { description: 'About', url: '#about' },
-              { description: 'Menu', url: 'menu' },
-              { description: 'Reservations', url: 'reservations' },
-              { description: 'Order online', url: 'order-online' },
-              { description: 'Login', url: 'login' },
+              { description: 'Home', url: '/#home' },
+              { description: 'About', url: '/#about' },
+              { description: 'Menu', url: '#menu' },
+              { description: 'Reservations', url: '/booking' },
+              { description: 'Order online', url: '#order-online' },
+              { description: 'Login', url: '#login' },
             ]}
         />
       </ResponsiveGrid>

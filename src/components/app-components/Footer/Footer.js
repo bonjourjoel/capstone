@@ -4,6 +4,7 @@ import pic from "../../../assets/logo-ver.png";
 import facebook from "../../../assets/icon-facebook.png";
 import twitter from "../../../assets/icon-twitter.png";
 import youtube from "../../../assets/icon-youtube.png";
+import { HashLink } from 'react-router-hash-link';
 
 export default function Footer() {
   return (
@@ -13,12 +14,12 @@ export default function Footer() {
           <img src={pic} className="footer-pic" alt='Little lemon food'/>
         </div>
         <div>
-            <div><a href='#home'>Home</a></div>
-            <div><a href='#about'>About</a></div>
-            <div><a href='menu'>Menu</a></div>
-            <div><a href='reservations'>Reservations</a></div>
-            <div><a href='order-online'>Order Online</a></div>
-            <div><a href='login'>Login</a></div>
+            <div><HashLink smooth to='/#home'>Home</HashLink></div>
+            <div><HashLink smooth to='/#about'>About</HashLink></div>
+            <div><HashLink smooth to='#menu'>Menu</HashLink></div>
+            <div><HashLink smooth to='/booking'>Reservations</HashLink></div>
+            <div><HashLink smooth to='#order-online'>Order Online</HashLink></div>
+            <div><HashLink smooth to='#login'>Login</HashLink></div>
         </div>
         <div>
             <div>📫 11 Baker street, 45055 Chicago</div>
