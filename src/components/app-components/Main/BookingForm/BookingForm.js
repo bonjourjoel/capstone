@@ -37,6 +37,7 @@ export default function BookingForm({bookedTimes, dispatchBook}) {
     <form className="booking-form" onSubmit={handleSubmit}>
       <label htmlFor="res-date">Choose date</label>
       <input type="date" id="res-date" name="resDate" value={formState.resDate} onChange={handleChange}/>
+      {availableTimes(formState.resDate).length === 0 && <p className="font-description font-error">This date is fully booked. Please select another</p>}
       <label htmlFor="res-time">Choose time</label>
       <select id="res-time " name="resTime" value={formState.resTime} onChange={handleChange}>
           {
