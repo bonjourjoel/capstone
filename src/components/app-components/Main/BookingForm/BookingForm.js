@@ -36,9 +36,9 @@ export default function BookingForm({bookedTimes, dispatchBook}) {
   return (
     <form className="booking-form" onSubmit={handleSubmit}>
       <label htmlFor="res-date">Choose date</label>
-      <input type="date" id="res-date" name="resDate" value={formState.resDate} onChange={handleChange} required />
       {formState.resDate === '' && <p className="font-description font-error">Please select a date.</p>}
       {availableTimes(formState.resDate).length === 0 && <p className="font-description font-error">This date is fully booked. Please select another.</p>}
+      <input type="date" id="res-date" name="resDate" value={formState.resDate} onChange={handleChange} required />
       <label htmlFor="res-time">Choose time</label>
       <select id="res-time " name="resTime" value={formState.resTime} onChange={handleChange} required>
           {
@@ -48,8 +48,8 @@ export default function BookingForm({bookedTimes, dispatchBook}) {
           }
       </select>
       <label htmlFor="guests">Number of guests</label>
-      <input type="number" placeholder="1" min="1" max="10" id="guests" name="guestsCount" value={formState.guestsCount} onChange={handleChange} required />
       {! (formState.guestsCount > 0) && <p className="font-description font-error">The minimum value is 1 guest.</p>}
+      <input type="number" placeholder="1" min="1" max="10" id="guests" name="guestsCount" value={formState.guestsCount} onChange={handleChange} required />
       <label htmlFor="occasion">Occasion</label>
       <select id="occasion" name="occasion" value={formState.occasion} onChange={handleChange} required>
           <option>Birthday</option>
