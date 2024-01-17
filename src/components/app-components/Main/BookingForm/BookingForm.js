@@ -48,12 +48,13 @@ export default function BookingForm({bookedTimes, dispatchBook}) {
       </select>
       <label htmlFor="guests">Number of guests</label>
       <input type="number" placeholder="1" min="1" max="10" id="guests" name="guestsCount" value={formState.guestsCount} onChange={handleChange}/>
+      {! (formState.guestsCount > 0) && <p className="font-description font-error">The minimum value is 1 guest.</p>}
       <label htmlFor="occasion">Occasion</label>
       <select id="occasion" name="occasion" value={formState.occasion} onChange={handleChange}>
           <option>Birthday</option>
           <option>Anniversary</option>
       </select>
-      <input type="submit" value="Make Your reservation" disabled={availableTimes(formState.resDate).length === 0}/>
+      <input type="submit" value="Make Your reservation" disabled={availableTimes(formState.resDate).length === 0 || ! (formState.guestsCount > 0)}/>
       {/* <pre>formState={JSON.stringify(formState)}</pre>
       <pre>bookedTimes={JSON.stringify(bookedTimes)}</pre>
       <pre>availableTimes={JSON.stringify(availableTimes)}</pre> */}
